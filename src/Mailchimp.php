@@ -211,6 +211,7 @@ class Mailchimp
 
 
         $response_body = curl_exec($ch);
+        file_put_contents(BP. DIRECTORY_SEPARATOR . 'var' . DIRECTORY_SEPARATOR . 'log'. DIRECTORY_SEPARATOR . 'Mailchimp_result.log', $response_body, FILE_APPEND);
 
         $info = curl_getinfo($ch);
         if(curl_error($ch)) {
